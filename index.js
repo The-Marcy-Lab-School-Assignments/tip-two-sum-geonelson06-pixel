@@ -9,9 +9,32 @@
  * - Return the indices in any order.
  */
 
-const twoSum = (nums, target) => {
-    //write your code here
+/* const twoSum = (nums, target) => {
+  const map = {};
+
+  for (let i = 0; i < nums.length; i++) {
+    const complement = target - nums[i];
+
+    if (map[complement] !== undefined) {
+      return [map[complement], i];
+    }
+
+    map[nums[i]] = i;
+  }
+
 };
+*/
+
+function twoSum(nums, target) {
+  for (let i = 0; i < nums.length; i++) {
+    for (let j = i + 1; j < nums.length; j++) {
+      if (nums[i] + nums[j] === target) {
+        return [i, j];
+      }
+    }
+  }
+}
+
 
 // Example usage (commented out to avoid interference with tests)
 // console.log(twoSum([2, 7, 11, 15], 9)); // → [0, 1]
